@@ -1,0 +1,13 @@
+steps:
+- name: europe-west1-docker.pkg.dev/[...]/mymailer:latest
+args:
+- '/bin/sh'
+- '-c'
+- |
+echo $$MSTP_PASSWORD > /dev/null
+echo "body" | mutt -s "subj" -a att.file -- divyashet543@gmail.com
+secretEnv: [MSMTP_PASSWORD]
+availableSecrets:
+secretManager:
+- versionName: projects/460440866465/secrets/msmtp_password/versions/1
+env: MSMTP_PASSWORD
