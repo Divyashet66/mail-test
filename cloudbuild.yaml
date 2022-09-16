@@ -1,5 +1,5 @@
 steps: 
-  - 
+  - name: europe-west1-docker.pkg.dev/tech-rnd-project/mymailer:latest
     args: 
       - /bin/sh
       - "-c"
